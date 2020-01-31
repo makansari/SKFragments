@@ -1,5 +1,6 @@
 package com.ansari.skfragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,12 @@ import kotlinx.android.synthetic.main.fragment_one.view.*
 
 class FragmentOne : Fragment() {
 
+    lateinit var myInterface : MyInterface
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+
+        myInterface = activity as MyInterface
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -20,8 +27,8 @@ class FragmentOne : Fragment() {
         var view = inflater.inflate(R.layout.fragment_one,container,false)
 
         view.buttonPassdata.setOnClickListener {
-
-            Toast.makeText(activity,"passing data button clicked",Toast.LENGTH_SHORT).show()
+            myInterface.myMethod("ansari")
+          /*  Toast.makeText(activity,"passing data button clicked",Toast.LENGTH_SHORT).show()
               // passing the data via bundle
                 var bundle = Bundle()
                 bundle.putString("key1","Data been passed ")
@@ -31,7 +38,9 @@ class FragmentOne : Fragment() {
             var f2 = FragmentTwo()
             f2.arguments = bundle
 
-            fragmentManager!!.beginTransaction().replace(R.id.mylayout,f2).addToBackStack(null).commit()
+            fragmentManager!!.beginTransaction().replace(R.id.mylayout,f2).addToBackStack(null).commit()*/
+
+
 
         }
 
