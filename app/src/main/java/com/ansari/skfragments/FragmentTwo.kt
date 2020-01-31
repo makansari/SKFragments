@@ -16,10 +16,16 @@ class FragmentTwo : Fragment() {
     ): View? {
         var view = inflater.inflate(R.layout.fragment_two,container,false)
 
-       var data = arguments!!.getString("key1")
+      /* var data = arguments!!.getString("key1")
 
         view.textViewData.setText(data)
-
+*/
         return view
+    }
+
+    fun getMyData(mydata : String){
+
+        view!!.textViewData.setText(mydata)
+
     }
 }

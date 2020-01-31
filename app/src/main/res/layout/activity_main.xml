@@ -37,5 +37,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFragmentTwo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentStatic"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFragmentTwo"
+        app:layout_constraintStart_toStartOf="@+id/buttonFragmentOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/myicon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
